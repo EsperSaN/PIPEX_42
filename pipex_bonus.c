@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.c                                            :+:      :+:    :+:   */
+/*   pipex_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pruenrua <pruenrua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 14:50:36 by pruenrua          #+#    #+#             */
-/*   Updated: 2023/05/29 22:06:51 by pruenrua         ###   ########.fr       */
+/*   Updated: 2023/05/29 22:45:39 by pruenrua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "pipex_bonus.h"
 
 void	var_init(t_p *var, int ac)
 {
@@ -72,9 +72,14 @@ int	main(int ac, char **av, char **ev)
 	t_p	var;
 
 	var_init(&var, ac);
-	if (ac != 5)
-		put_error("input must be 'infile cmd1 cmd2 outfile'", 22, &var);
+	if (ac < 5)
+		put_error("input must be 'infile cmd1 cmd2 cmd.... outfile'", 22, &var);
 	var.envbox = get_envpath(ev);
+	if (str_n_compare(av[1], "here_doc", 8) && av[2])
+	{
+		var.in_file = do_doctype(av[2]);
+		var.count = 1;
+	}
 	while (var.count < ac - 3)
 	{
 		create_pipe(&var);

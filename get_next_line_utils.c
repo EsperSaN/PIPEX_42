@@ -6,11 +6,11 @@
 /*   By: pruenrua <pruenrua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:44:10 by pruenrua          #+#    #+#             */
-/*   Updated: 2023/05/26 19:21:29 by pruenrua         ###   ########.fr       */
+/*   Updated: 2023/05/29 22:25:26 by pruenrua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "pipex_bonus.h"
 
 int	newline_checker(char *str)
 {
@@ -27,6 +27,8 @@ size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
+	if (!s)
+		return (0);
 	i = 0;
 	while (*s)
 	{

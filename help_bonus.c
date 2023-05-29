@@ -1,31 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   help.c                                             :+:      :+:    :+:   */
+/*   help_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pruenrua <pruenrua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 14:41:40 by pruenrua          #+#    #+#             */
-/*   Updated: 2023/05/29 22:13:28 by pruenrua         ###   ########.fr       */
+/*   Updated: 2023/05/29 22:25:20 by pruenrua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	if (!s)
-		return (0);
-	i = 0;
-	while (*s)
-	{
-		i++;
-		s++;
-	}
-	return (i);
-}
+#include "pipex_bonus.h"
 
 int	str_n_compare(const char *s1, const char *s2, size_t n)
 {

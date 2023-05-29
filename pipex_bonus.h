@@ -1,17 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   pipex_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pruenrua <pruenrua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 14:50:25 by pruenrua          #+#    #+#             */
-/*   Updated: 2023/05/29 22:09:04 by pruenrua         ###   ########.fr       */
+/*   Updated: 2023/05/29 22:26:06 by pruenrua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#ifndef PIPEX_BONUS_H
+# define PIPEX_BONUS_H
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
 
 # include <unistd.h>
 # include <fcntl.h>
@@ -54,6 +58,9 @@ char	**get_envpath(char **ep);
 char	*get_cmdpath(char *command, char **env);
 int		find_slash(char *str);
 
+/* DOCTYPE.c */
+int		do_doctype(char *cutoffstr);
+
 /* HELP.c */
 size_t	ft_strlen(const char *s);
 int		str_n_compare(const char *s1, const char *s2, size_t n);
@@ -62,12 +69,23 @@ size_t	count_on_me(char const *s, char c);
 size_t	how_long(char const *s, char c);
 
 /* HELP2.c */
-char	*ft_strjoin(char const *s1, char const *s2);
+//char	*ft_strjoin(char const *s1, char const *s2);
 char	**ft_split(char const *s, char c);
-size_t	ft_strlen(const char *s);
 
 /* FREE.c */
 void	free2d(char	**ptr);
 void	free_st(t_p *var);
+
+/*GNL.C*/
+char	*get_next_line(int fd);
+size_t	count_untill_newline(char *str);
+char	*read_until_newline(int fd, char *st_mem);
+char	*copy_line_to_output(char *st_mem);
+char	*del_oldline_and_move_to_next_line(char *st_mem);
+
+/*GNL_UTIL.C*/
+int		newline_checker(char *str);
+size_t	ft_strlen(const char *s);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 #endif

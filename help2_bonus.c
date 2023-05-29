@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   help2.c                                            :+:      :+:    :+:   */
+/*   help2_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pruenrua <pruenrua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 14:42:28 by pruenrua          #+#    #+#             */
-/*   Updated: 2023/05/29 22:07:37 by pruenrua         ###   ########.fr       */
+/*   Updated: 2023/05/29 22:25:11 by pruenrua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
-
+#include "pipex_bonus.h"
+/*
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*j_str;
@@ -38,7 +38,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	*j_str = '\0';
 	return (str_joined);
 }
-
+*/
 char	**ft_split(char const *s, char c)
 {
 	char	**resplit;

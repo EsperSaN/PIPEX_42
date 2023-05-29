@@ -6,7 +6,7 @@
 #    By: pruenrua <pruenrua@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/25 14:42:41 by pruenrua          #+#    #+#              #
-#    Updated: 2023/05/26 19:49:40 by pruenrua         ###   ########.fr        #
+#    Updated: 2023/05/29 22:47:41 by pruenrua         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,25 +14,26 @@ NAME = pipex
 
 NAME_BONUS = pipex
 
-SRC = runcmd.c error.c pipework.c get_next_line_utils.c get_next_line.c pipex_tool.c help.c help2.c free.c doctype.c pipex.c
+SRC = runcmd.c error.c pipework.c pipex_tool.c help.c help2.c free.c pipex.c
 
-SRC_B = runcmd.c error.c pipework.c get_next_line_utils.c get_next_line.c pipex_tool.c help.c help2.c free.c pipex.c
+SRC_B = runcmd_bonus.c error_bonus.c pipework_bonus.c get_next_line_utils.c get_next_line.c pipex_tool_bonus.c help_bonus.c help2_bonus.c free_bonus.c doctype.c pipex_bonus.c
 
 CC = gcc
 
-CFLAGS = -Wall -Werror -Wextra# -fsanitize=address -g
+CFLAGS = -Wall -Werror -Wextra
 
 OBJ = $(SRC:.c=.o)
 
-BOBJ = $(SRC:.c=.o)
+BOBJ = $(SRC_B:.c=.o)
 
-all : $(NAME) clean
+all : $(NAME)
+
+$(NAME) : $(OBJ)
+	 $(CC) $(OBJ) -o $(NAME)
 
 bonus : $(BOBJ)
 	$(CC) $(BOBJ) -o $(NAME_BONUS)
 
-$(NAME) : $(OBJ)
-	 $(CC) $(OBJ) -o $(NAME)
 clean :
 	rm -rf $(OBJ) $(BOBJ)
 
@@ -41,4 +42,4 @@ fclean : clean
 	
 re : fclean $(NAME)
 
-.PHONY : clean fclean re all
+.PHONY : clean fclean re all bonus

@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   error_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pruenrua <pruenrua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 14:31:33 by pruenrua          #+#    #+#             */
-/*   Updated: 2023/05/29 21:51:28 by pruenrua         ###   ########.fr       */
+/*   Updated: 2023/05/29 22:25:38 by pruenrua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
-#include <stdlib.h>
+#include "pipex_bonus.h"
 
 void	p_error2_butexit1(int errornum, t_p *var, char *file)
 {

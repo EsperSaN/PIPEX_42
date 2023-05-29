@@ -6,11 +6,11 @@
 /*   By: pruenrua <pruenrua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:44:41 by pruenrua          #+#    #+#             */
-/*   Updated: 2023/05/26 19:21:18 by pruenrua         ###   ########.fr       */
+/*   Updated: 2023/05/29 22:25:23 by pruenrua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "pipex_bonus.h"
 
 size_t	count_untill_newline(char *str)
 {
@@ -99,8 +99,6 @@ char	*del_oldline_and_move_to_next_line(char *st_mem)
 		return (0);
 	}
 	result = (char *)malloc(ft_strlen(&st_mem[i++]) + 1);
-	if (!result)
-		return (0);
 	result[ft_strlen(&st_mem[i])] = '\0';
 	while (st_mem[i])
 	{
