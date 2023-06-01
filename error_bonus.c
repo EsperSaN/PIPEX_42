@@ -16,6 +16,7 @@ void	p_error2_butexit1(int errornum, t_p *var, char *file)
 {
 	putstr_fd("pipex42: ", 2);
 	putstr_fd(strerror(errornum), 2);
+	putstr_fd(": ", 2);
 	putstr_fd(file, 2);
 	putstr_fd(" \n", 2);
 	free_st(var);
